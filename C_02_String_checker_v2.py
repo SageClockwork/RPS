@@ -20,12 +20,15 @@ def string_checker(user_response, valid_ans):
 
 # Automated testing is below in the form (test_case, expected_value)
 to_test = [
-    ("yes", "yes"),
-    ("Y", "yes"),
-    ("No", "no"),
-    ("N", "no"),
-    ("YeS", "yes"),
-    ("Maybe", "invalid"),
+    ("Rock", "rock"),
+    ("PAPER", "paper"),
+    ("R", "rock"),
+    ("P", "paper"),
+    ("S", "scissors"),
+    ("xxx", "xxx"),
+    ("x", "xxx"),
+    ("random", "invalid"),
+    
 ]
 
 # run tests!

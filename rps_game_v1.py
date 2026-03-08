@@ -161,16 +161,33 @@ while rounds_played < num_rounds:
 # Game loop ends here
         
 # Game history / statistics area
+def game_history():
+
+    print()
+    print(f"""\n 🪨📄✂ Game History ✂📄🪨
+        
+    Statistics:
+        
+    Rounds played: {rounds_played}
+    Rounds tied: {rounds_tied}
+    Rounds lost: {rounds_lost}
+    Rounds won: {rounds_played - (rounds_tied + rounds_lost)}
+    Percentage won: %{round((rounds_played - rounds_tied - rounds_lost) / rounds_played * 100)}
+
+        """)
+    
 
 print()
-print(f"""\n 🪨📄✂ Game History ✂📄🪨
-      
-Statistics:
-      
-Rounds played: {rounds_played}
-Rounds tied: {rounds_tied}
-Rounds lost: {rounds_lost}
-Rounds won: {rounds_played - (rounds_tied + rounds_lost)}
-Percentage won: %{(rounds_played - rounds_tied - rounds_lost) / rounds_played * 100}
+if rounds_played >= 1:
+    want_history = string_checker("Do you want to see the game history? ")
 
-      """)
+    if want_history == "yes":
+        game_history()
+
+if rounds_played >= 1:
+    print("Thank you for playing RPS!")
+    print()
+
+elif rounds_played < num_rounds:
+    print("You Quit!")
+    print()
